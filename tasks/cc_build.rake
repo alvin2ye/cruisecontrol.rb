@@ -10,7 +10,7 @@ module CruiseControl
   def self.reconnect
     require 'active_record' unless defined? ActiveRecord
     configurations = ActiveRecord::Base.configurations
-    if configurations and configurations.has_key?("test") and configurations["test"]["adapter"] == 'mysql'
+    if configurations and configurations.has_key?("test") and configurations["test"]["adapter"][0..4] == 'mysql'
       ActiveRecord::Base.establish_connection(:test)
     end
   end
