@@ -9,6 +9,7 @@
 RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
+require 'thread'
 require File.join(File.dirname(__FILE__), 'boot')
 ABSOLUTE_RAILS_ROOT = File.expand_path(RAILS_ROOT) unless defined? ABSOLUTE_RAILS_ROOT
 
